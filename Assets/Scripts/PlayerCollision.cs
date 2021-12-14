@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
@@ -9,7 +7,8 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collisionInfo.collider.tag == "Obstacle")
         {
-            movement.enabled = false; 
+            movement.enabled = false;
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
 }
