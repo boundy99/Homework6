@@ -33,6 +33,10 @@ public class PlayMov : MonoBehaviour
         {
             rb.AddForce(0, -frontbackF* Time.deltaTime, 0, ForceMode.VelocityChange);
         }
+        if (rb.position.y < -1f)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
     }
 }
 //Which view enables you to manipulate objects in a scene visually?
